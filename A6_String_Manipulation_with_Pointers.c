@@ -26,8 +26,14 @@ int main() {
     printf("Enter a string: ");
     fgets(user_str, sizeof(user_str), stdin);
     
+    size_t len = str_length(user_str);
+    if (user_str[len - 1] == '\n') {
+        user_str[len - 1] = '\0';
+    }
+
     int length = str_length(user_str);
     printf("Length of the entered string: %d\n", length);
     
     return 0;
 }
+
